@@ -21,10 +21,13 @@
   font-weight: 500;
 }
 
-body {
+html, body {
   /* Gets rid of margins and padding on sides of screen */
   margin: 0;
   padding: 0;
+
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .Sidebar {
@@ -33,9 +36,13 @@ body {
   bottom: 0%;
   
   position: fixed;
+  overflow: hidden;
 
   /* Color of sidebar */
   background-color: #323f52;
+
+  /* Makes sidebar in front of everything */
+  z-index:99;
 }
 
 .SidebarList {
@@ -114,17 +121,45 @@ body {
   align-items: center;
 }
 
+.SubjectRow #SubjectWrapper {
+  /* Makes name and button in row */
+  display: flex;
+  flex-direction: row;
+
+  /* Makes button position absolute work */
+  position: relative;
+}
+
 .SubjectRow #SubjectName {
   /* Centers name */
   display: grid;
   place-items: center;
   margin-top: 3%;
+  margin-left: 15%;
+  width: 70%;
 
   /* Color of name*/
-  color: white;
+  color: black;
 
   font-size: xx-large;
-  font-weight: 1000;
+  font-weight: 7    00;
+}
+
+.SubjectRow #SubjectButton {
+  /* Centers icon in button */
+  display: grid;
+  place-items: center;
+
+  /* Makes button's positioning not effect other elements */
+  position: absolute;
+  
+  margin-left: 85%;
+  margin-top: 15px;
+
+  /* Circle button css */
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
 }
 
 .SubjectRow #SubjectTasks {
