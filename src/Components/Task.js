@@ -4,7 +4,8 @@ import { TaskData } from './TaskData'; // Imports Task data
 import DeleteIcon from '@mui/icons-material/Delete';
 
 function Task(props) {
-    const { subjectIDFromSubject } = props; /* Passes in subjectIDFromSubject */
+    const { subjectIDFromSubject, buttonsOpen } = props; /* Passes in subjectIDFromSubject */
+
     const [taskOpen, setTaskOpen] = React.useState(false); /* Initializes taskOpen using useState */
     const toggleTask = (taskId) => { /* Function for toggling task*/
         setTaskOpen((prevState) => {
@@ -30,7 +31,7 @@ function Task(props) {
                         >
                             <div id='TaskWrapper'>
                                 <div id='TaskName'>{val.name}</div>
-                                <div id='TaskDeleteButton'><DeleteIcon /></div>
+                                <div id='TaskDeleteButton' style={{ display: buttonsOpen ? 'grid' : 'none' }}><DeleteIcon /></div>
                             </div>
                             <div id='TaskDesc' style={{ display: taskOpen[taskId] ? 'block' : 'none' }}> {/* Changes display of taskOpen to none or block */}
                                 {val.desc}
