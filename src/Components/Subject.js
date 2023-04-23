@@ -2,6 +2,7 @@ import React from 'react'
 import '../AppMain.css'; // Two dots to go outside of the components folder
 import { SubjectData } from './SubjectData'; // Imports subject data
 import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function Subject() {
     return (
@@ -19,6 +20,7 @@ function Subject() {
                                 <div id='SubjectButton'><EditIcon /></div> {/* Applies subject's button to enable editing and deleting of subject name and tasks */}
                             </div>
                             <div id='SubjectTasks'>{val.tasks}</div> {/* Applies subject's tasks */}
+                            <div id='SubjectDeleteButton'><DeleteIcon /></div> {/* Applies subject's delete button */}
                         </li>
                     )
                 })}

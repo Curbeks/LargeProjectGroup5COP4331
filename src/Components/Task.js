@@ -1,6 +1,7 @@
 import React from 'react'
 import '../AppMain.css'; // Two dots to go outside of the components folder
 import { TaskData } from './TaskData'; // Imports Task data
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function Task(props) {
     const { subjectIDFromSubject } = props; /* Passes in subjectIDFromSubject */
@@ -27,7 +28,10 @@ function Task(props) {
                                 toggleTask(taskId);
                             }}
                         >
-                            <div id='TaskName'>{val.name}</div>
+                            <div id='TaskWrapper'>
+                                <div id='TaskName'>{val.name}</div>
+                                <div id='TaskDeleteButton'><DeleteIcon /></div>
+                            </div>
                             <div id='TaskDesc' style={{ display: taskOpen[taskId] ? 'block' : 'none' }}> {/* Changes display of taskOpen to none or block */}
                                 {val.desc}
                             </div>
